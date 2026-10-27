@@ -51,5 +51,34 @@ double  get_geometrical_avg(int* array, int size) {
 
 	return pow(product, 1.0 / size);
 }
+//string get_positions_of_research_number(int* array, int size, int researched_number) {
+//	string result = "";
+//	for (int i = 0; i < size; i++) {
+//		if (array[i] == researched_number) {
+//			result += to_string(i) + " ";
+//		}
+//	}
+bool binary_search(int* array, int size, int value) {
+	int first = 0;
+	int last = size - 1;
+
+	while (first <= last) {
+		int middle = (first + last) / 2;
+
+		if (array[middle] == value) {
+			return true;
+		}
+		else if (array[middle] < value) {
+			first = middle + 1;
+		}
+		else {
+			last = middle - 1;
+		}
+
+
+	}
+
+	return false;
+}
 
 
